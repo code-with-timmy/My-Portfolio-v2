@@ -17,15 +17,18 @@ function Footer() {
               Twitter
             </span>
           </a>
-          <a
-            href="mailto:ojotimothy04@gmail.com"
+          <button
+            onClick={() => {
+              window.location.href =
+                "mailto:ojotimothy04@gmail.com?subject=Hello%20Timmy&body=Hi%20Timmy,%20I%20saw%20your%20portfolio!";
+            }}
             className="flex items-center gap-1 ft-1 group"
           >
             <MdEmail className="text-[18px] opacity-[0.6] group-hover:opacity-100" />
             <span className="text-[14px] opacity-[0.7] group-hover:opacity-100 max-sm:hidden">
               Mail
             </span>
-          </a>
+          </button>
           <a
             href="https://github.com/code-with-timmy"
             className="flex items-center gap-1 ft-1 group"
