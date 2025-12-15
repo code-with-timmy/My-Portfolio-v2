@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 
-function Button({ children }) {
+function Button({ onClick, children }) {
   return (
-    <button className="btn-1 cursor-pointer max-sm:w-full">{children}</button>
+    <button onClick={onClick} className="btn-1 cursor-pointer max-sm:w-full">
+      {children}
+    </button>
   );
 }
 

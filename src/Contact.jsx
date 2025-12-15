@@ -21,7 +21,12 @@ function Contact() {
             Always keen to collaborate, learn, and ship new ideas.
           </p>
           <div className="flex max-sm:flex-col items-center gap-3.5 justify-center">
-            <Button>
+            <Button
+              onClick={() => {
+                window.location.href =
+                  "mailto:ojotimothy04@gmail.com?subject=Hello%20Timmy&body=Hi%20Timmy,%20I%20saw%20your%20portfolio!";
+              }}
+            >
               <MdEmail className="text-[17px]" />
 
               <a href="mailto:ojotimothy04@gmail.com">Email me</a>
