@@ -1,21 +1,10 @@
-import { useEffect, useRef } from "react";
 import { BiSolidFilePdf } from "react-icons/bi";
 import { MdEmail } from "react-icons/md";
 import Button from "./Button";
-import { LuChevronsUp } from "react-icons/lu";
-import useClickSound from "./hooks/UseClickSound";
+
+import NaviUp from "./NaviUp";
 
 function Contact() {
-  const play = useClickSound();
-
-  function scrollToTop() {
-    play();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
-
   return (
     <section className="border-b border-border-btn z-10 ">
       <div className="w-[70%] max-sm:w-[90%] mx-auto py-20 ">
@@ -45,15 +34,7 @@ function Contact() {
           </div>
         </div>
         <div className="flex justify-center my-20">
-          <button
-            onClick={scrollToTop}
-            className="text-text border flex flex-col group  w-fit items-center px-8 py-6 gap-1.5  rounded-3xl border-border-btn font-medium btn3"
-          >
-            <div>
-              <LuChevronsUp className="opacity-[0.7] group-hover:opacity-[1]" />
-            </div>
-            <span className="text-[12px] opacity-[0.7]">back to top</span>
-          </button>
+          <NaviUp />
         </div>
       </div>
     </section>
