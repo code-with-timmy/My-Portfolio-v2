@@ -1,0 +1,331 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  &,
+  &.light-mode {
+    --bg: #ffffff;
+    --text: #000000;
+    --border-btn: rgba(0, 0, 0, 0.12);
+    --border: #e5e5e5;
+    --toggle-btn: #000000;
+  }
+
+  &.dark-mode {
+    --bg: #000000;
+    --text: #ffffff;
+    --border: rgba(255, 255, 255, 0.15);
+    --border-btn: rgba(255, 255, 255, 0.15);
+    --toggle-btn: rgba(255, 255, 255, 0.15);
+  }
+}
+
+@theme {
+  --font-saira: "Saira", sans-serif;
+  /* --font-instrument: "Instrument Sans", sans-serif; */
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-border-color: var(--border);
+  --color-border-btn: var(--border-btn);
+  --color-toggle-btn: var(--toggle-btn);
+}
+
+@layer base {
+  body {
+    @apply bg-bg;
+    font-family: var(--font-saira) !important;
+    /* @apply font-instrument bg-bg; */
+  }
+
+  body:after {
+    content: "";
+    background-image: url(https://bedes.qui.gg/images/framernoise.png);
+    height: 300%;
+    width: 300%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    animation: fadeInGrain 2s ease forwards, animateGrain 8s steps(10) infinite;
+  }
+
+  @keyframes fadeInGrain {
+    0% {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 0.08;
+    }
+  }
+
+  @keyframes animateGrain {
+    0%,
+    to {
+      transform: translate(0);
+    }
+
+    10% {
+      transform: translate(-5%, -10%);
+    }
+
+    20% {
+      transform: translate(-15%, -20%);
+    }
+
+    30% {
+      transform: translate(-5%, -10%);
+    }
+
+    40% {
+      transform: translate(-15%, -20%);
+    }
+
+    50% {
+      transform: translate(-5%, -10%);
+    }
+
+    60% {
+      transform: translate(-15%, -20%);
+    }
+
+    70% {
+      transform: translate(-5%, -10%);
+    }
+
+    80% {
+      transform: translate(-15%, -20%);
+    }
+
+    90% {
+      transform: translate(-5%, -10%);
+    }
+
+    to {
+      transform: translate(-15%, -20%);
+    }
+  }
+}
+
+@layer components {
+  .heading {
+    @apply text-2xl font-semibold pb-6;
+  }
+
+  .btn {
+    @apply border px-3 py-2 border-border-btn rounded-md font-medium;
+    font-size: 14px;
+    opacity: 0.8;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    opacity: 2;
+    outline: none;
+    background: rgba(128, 128, 128, 0.08);
+  }
+
+  @keyframes borderSweep {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 300% 50%;
+    }
+  }
+
+  .btn-1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    background-clip: padding-box;
+  }
+
+  /* Animated border - same as CLI button */
+  .btn-1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    padding: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    );
+    background-size: 300% 100%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: borderSweep 5s linear infinite;
+    z-index: 10;
+  }
+
+  .light-mode .btn-1::before {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1)
+    );
+    background-size: 300% 100%;
+    animation: borderSweep 5s linear infinite;
+  }
+
+  /* Hover background effect */
+  .btn-1::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--text);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 4px;
+    z-index: 0;
+  }
+
+  .btn-1:hover {
+    transform: translateY(-2px);
+    outline: none;
+  }
+
+  .ft-1 {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .ft-1:hover {
+    transform: translateY(-2px);
+    color: var(--text);
+  }
+
+  .btn span {
+    letter-spacing: 0.01em;
+  }
+
+  .btn-2 {
+    @apply border px-3 py-2 border-border-btn rounded-md font-medium z-10 cursor-pointer;
+    background: transparent;
+  }
+
+  .btn-2:hover {
+    @apply bg-text text-bg;
+    transition: all 0.3s ease;
+  }
+
+  .project-card {
+    width: 100%;
+    height: 400px;
+    background: var(--bg);
+    border: 1px solid var(--border-btn);
+    opacity: 0.9;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(128, 128, 128, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .project-card:hover {
+    opacity: 1;
+    box-shadow: 0 16px 48px rgba(128, 128, 128, 0.25);
+    transform: translateY(-4px);
+  }
+
+  .btn3 {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .btn3:hover {
+    background: rgba(128, 128, 128, 0.1);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(128, 128, 128, 0.2);
+  }
+
+  .card-img-container {
+    width: 100%;
+    height: 160px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-tag {
+    padding: 3px 8px;
+    background: rgba(128, 128, 128, 0.1);
+    border: 1px solid var(--border-btn);
+    opacity: 0.8;
+    border-radius: 6px;
+    font-size: 10px;
+    color: var(--text);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .card-view {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-view:hover {
+    opacity: 0.7;
+    transform: translateX(7px);
+  }
+
+  .blink {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1db954;
+
+    animation: blinkLight 1.2s infinite ease-in-out;
+  }
+
+  @keyframes blinkLight {
+    0%,
+    100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { HiCode } from "react-icons/hi";
+import { MdEmail } from "react-icons/md";
+
+function Footer() {
+  const currentYear = new Date().getFullYear();
+  return (
+    <footer className="border-b border-border-btn z-10 ">
+      <div className="w-[70%] max-sm:w-[90%] mx-auto py-10 ">
+        <div className="flex gap-10 justify-center pb-6 items-center border-b border-border-btn">
+          <a
+            href="https://x.com/eth_timmy"
+            className="flex items-center gap-1 ft-1 group"
+          >
+            <FaXTwitter className="text-[18px] opacity-[0.6] group-hover:opacity-100" />
+            <span className="text-[14px] opacity-[0.7] group-hover:opacity-100 max-sm:hidden">
+              Twitter
+            </span>
+          </a>
+          <a
+            href="mailto:ojotimothy04@gmail.com"
+            className="flex items-center gap-1 ft-1 group"
+          >
+            <MdEmail className="text-[18px] opacity-[0.6] group-hover:opacity-100" />
+            <span className="text-[14px] opacity-[0.7] group-hover:opacity-100 max-sm:hidden">
+              Mail
+            </span>
+          </a>
+          <a
+            href="https://github.com/code-with-timmy"
+            className="flex items-center gap-1 ft-1 group"
+          >
+            <FaGithub className="text-[18px] opacity-[0.6] group-hover:opacity-100" />
+            <span className="text-[14px] opacity-[0.7] group-hover:opacity-100 max-sm:hidden">
+              Github
+            </span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ojo-timmy-ab61aa249/"
+            className="flex items-center gap-1 ft-1 group"
+          >
+            <FaLinkedin className="text-[18px] opacity-[0.6] group-hover:opacity-100" />
+            <span className="text-[14px] opacity-[0.7] group-hover:opacity-100 max-sm:hidden">
+              Linkedin
+            </span>
+          </a>
+          <a
+            href="https://leetcode.com/u/Timmy_py/"
+            className="flex items-center gap-1 ft-1 group "
+          >
+            <HiCode className="text-[18px] opacity-[0.6] group-hover:opacity-100" />
+            <span className="text-[14px] opacity-[0.7]  group-hover:opacity-100 max-sm:hidden">
+              Leetcode
+            </span>
+          </a>
+        </div>
+        <div className="text-center pt-5 text-[13px] opacity-[0.4]">
+          <p> © {currentYear} Ojo Timmy. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default Footer;
