@@ -4,7 +4,7 @@ export default function usePlayClick() {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    const audio = new Audio("/music-click.mp3");
+    const audio = new Audio("/mouse-click.mp3");
     audio.volume = 0.1;
     audio.preload = "auto";
     audio.load(); // force preload

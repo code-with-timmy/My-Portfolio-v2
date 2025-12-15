@@ -1,30 +1,31 @@
 import { LuChevronsUp } from "react-icons/lu";
 
 import { useEffect, useRef } from "react";
+import usePlayClick from "./hooks/usePlayClick";
 
 function NaviUp() {
-  function useClickSound() {
-    const audioRef = useRef(null);
+  //   function useClickSound() {
+  //     const audioRef = useRef(null);
 
-    useEffect(() => {
-      const audio = new Audio("/mouse-click.mp3");
-      audio.volume = 0.2;
-      audio.preload = "auto";
-      audio.load(); // force preload
-      audioRef.current = audio;
-    }, []);
+  //     useEffect(() => {
+  //       const audio = new Audio("/mouse-click.mp3");
+  //       audio.volume = 0.2;
+  //       audio.preload = "auto";
+  //       audio.load(); // force preload
+  //       audioRef.current = audio;
+  //     }, []);
 
-    const play = () => {
-      const audio = audioRef.current;
-      if (!audio) return;
-      audio.currentTime = 0;
-      audio.play();
-    };
+  //     const play = () => {
+  //       const audio = audioRef.current;
+  //       if (!audio) return;
+  //       audio.currentTime = 0;
+  //       audio.play();
+  //     };
 
-    return play;
-  }
+  //     return play;
+  //   }
 
-  const play = useClickSound();
+  const { play } = usePlayClick();
 
   function scrollToTop() {
     play();

@@ -27,7 +27,7 @@ function ToggleDarkMode() {
   //   return play;
   // }
 
-  const play = usePlayClick();
+  const { play } = usePlayClick();
 
   function handleClick() {
     play();
