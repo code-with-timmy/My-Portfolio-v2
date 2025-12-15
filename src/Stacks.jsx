@@ -1,8 +1,13 @@
+import { MdArrowForwardIos } from "react-icons/md";
+
 function Stacks() {
   return (
     <section className="border-b border-border-btn z-10 ">
       <div className="w-[70%] max-sm:w-[90%] mx-auto py-20 ">
-        <h2 className="heading">Stacks</h2>
+        <h2 className="heading flex items-center justify-start gap-1.5 ">
+          <MdArrowForwardIos className="text-[20px] font-extrabold text-[#1DB954]" />{" "}
+          <span>Stacks</span>
+        </h2>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(60px,1fr))] space-y-4  mt-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,10 +1,15 @@
+import { FaGreaterThan } from "react-icons/fa6";
 import Card from "./Card";
+import { MdArrowForwardIos } from "react-icons/md";
 
 function MyProject() {
   return (
     <section className="border-b border-border-btn">
       <div className="w-[70%] max-sm:w-[90%] mx-auto py-20 ">
-        <h2 className="heading">Projects</h2>
+        <h2 className="heading flex items-center justify-start gap-1.5 ">
+          <MdArrowForwardIos className="text-[20px] font-extrabold text-[#1DB954]" />{" "}
+          <span>Things I've built</span>
+        </h2>
         <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-10">
           <Card
             title="Kanban task management"
