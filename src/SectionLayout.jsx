@@ -47,10 +47,14 @@ function SectionLayout() {
                   <FaXTwitter />
                 </a>
               </button>
-              <button className="btn-2">
-                <a href="">
-                  <MdMail />
-                </a>
+              <button
+                className="btn-2"
+                onClick={() => {
+                  window.location.href =
+                    "mailto:ojotimothy04@gmail.com?subject=Hello%20Timmy&body=Hi%20Timmy,%20I%20saw%20your%20portfolio!";
+                }}
+              >
+                <MdMail />
               </button>
             </nav>
           </div>
