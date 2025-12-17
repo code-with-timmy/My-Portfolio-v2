@@ -1,7 +1,9 @@
 import {
+  FaFilePdf,
   FaGithub,
   FaPause,
   FaPlay,
+  FaRegCopy,
   FaSpotify,
   FaXTwitter,
 } from "react-icons/fa6";
@@ -10,7 +12,7 @@ import Header from "./Header";
 
 import { HiCode } from "react-icons/hi";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdMail } from "react-icons/md";
 import { SparklesCore } from "./Sparkles";
 import MyProject from "./MyProject";
 import MyExperience from "./MyExperience";
@@ -18,6 +20,9 @@ import Stacks from "./Stacks";
 import Contact from "./Contact";
 import TextType from "./TextType";
 import SpotifyButton from "./SpotifyButton";
+import Button from "./Button";
+import { TbCopy } from "react-icons/tb";
+import ExtraDesign from "./ExtraDesign";
 
 function SectionLayout() {
   return (
@@ -32,7 +37,8 @@ function SectionLayout() {
         />
       </div>
       <Header />
-      <main className="flex flex-col gap-20 items-center justify-center border-b py-20 border-border-color">
+      <main className="flex flex-col gap-16 items-center justify-center border-b pb-20 pt-10 border-border-color">
+        <ExtraDesign />
         <section className="border border-border-btn  w-[70%] max-sm:w-[90%] p-10 rounded-md flex flex-col gap-8">
           <div className="flex items-center justify-end max-sm:justify-center gap-2">
             <nav className="flex flex-row gap-2 items-center">
@@ -42,8 +48,8 @@ function SectionLayout() {
                 </a>
               </button>
               <button className="btn-2">
-                <a href="https://leetcode.com/u/Timmy_py/">
-                  <HiCode />
+                <a href="">
+                  <MdMail />
                 </a>
               </button>
             </nav>

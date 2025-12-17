@@ -25,14 +25,14 @@ function Contact() {
                   "mailto:ojotimothy04@gmail.com?subject=Hello%20Timmy&body=Hi%20Timmy,%20I%20saw%20your%20portfolio!";
               }}
             >
-              <MdEmail className="text-[17px] max-sm:text-[15px]" />
+              <MdEmail className="text-[15px]" />
 
               <a
                 href="mailto:ojotimothy04@gmail.com"
                 className="flex items-center gap-1"
               >
-                <span className="max-sm:text-[12px]">Get in touch</span>
-                <RiArrowRightSLine className="text-[18px] max-sm:text-[15px]" />
+                <span className="text-[12px]">Get in touch</span>
+                <RiArrowRightSLine className="text-[15px]" />
               </a>
             </div>
           </div>
