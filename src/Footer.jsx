@@ -49,7 +49,9 @@ function Footer() {
             </span>
           </a>
           <a
-            href="https://docs.google.com/document/d/1n-zyA7X5YKxzTaQEQL0nAu8R_tDHukcGHH4ULE3qspE/edit?tab=t.0"
+            href="/timmy-cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1 ft-1 group "
           >
             <BiSolidFilePdf className="text-[18px] opacity-[0.6] group-hover:opacity-100" />
