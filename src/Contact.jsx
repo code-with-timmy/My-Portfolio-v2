@@ -19,31 +19,27 @@ function Contact() {
 
           <div className="flex max-sm:flex-col items-center gap-3.5 justify-center">
             <div
-              className="relative flex items-center w-fit px-4 py-3 cursor-pointer border gap-1.5 rounded-3xl border-border-btn overflow-hidden glow"
+              className="relative flex items-center w-fit px-4 max-sm:px-3 max-sm:py-2 py-3 cursor-pointer border gap-1.5 rounded-3xl border-border-btn overflow-hidden glow"
               onClick={() => {
                 window.location.href =
                   "mailto:ojotimothy04@gmail.com?subject=Hello%20Timmy&body=Hi%20Timmy,%20I%20saw%20your%20portfolio!";
               }}
             >
-              <MdEmail className="text-[17px]" />
+              <MdEmail className="text-[17px] max-sm:text-[15px]" />
 
               <a
                 href="mailto:ojotimothy04@gmail.com"
                 className="flex items-center gap-1"
               >
-                {" "}
-                <span>Get in touch</span>
-                <RiArrowRightSLine className="text-[18px]" />
+                <span className="max-sm:text-[12px]">Get in touch</span>
+                <RiArrowRightSLine className="text-[18px] max-sm:text-[15px]" />
               </a>
             </div>
           </div>
         </div>
-        <div className="flex justify-center my-20">
-          <NaviUp />
-        </div>
 
-        <div>
-          <p className="font-bold text-[16px] text-center text-text opacity-[0.9]">
+        <div className="mt-25">
+          <p className="font-bold text-[13px] text-center text-text opacity-[0.5]">
             <span className="italic">
               “Let’s build something amazing together
             </span>{" "}

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function usePlayClick() {
   const audioRef = useRef(null);
@@ -7,24 +7,17 @@ export default function usePlayClick() {
     const audio = new Audio("/mouse-click.mp3");
     audio.volume = 0.1;
     audio.preload = "auto";
-    audio.load(); // force preload
     audioRef.current = audio;
   }, []);
 
   const play = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.currentTime = 0;
+    if (!audioRef.current) return;
 
-    audio.play();
+    // Clone to allow rapid clicks
+    const sound = audioRef.current.cloneNode(true);
+    sound.volume = 0.1;
+    sound.play().catch(() => {});
   };
 
-  const pause = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    audio.pause();
-  };
-
-  return { play, pause };
+  return { play };
 }
