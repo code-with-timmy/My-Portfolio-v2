@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { useDarkMode } from "./context/DarkModeContext";
 import usePlayClick from "./hooks/usePlayClick";
@@ -6,33 +5,14 @@ import usePlayClick from "./hooks/usePlayClick";
 function ToggleDarkMode() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-  // function useClickSound() {
-  //   const audioRef = useRef(null);
-
-  //   useEffect(() => {
-  //     const audio = new Audio("/mouse-click.mp3");
-  //     audio.volume = 0.2;
-  //     audio.preload = "auto";
-  //     audio.load(); // force preload
-  //     audioRef.current = audio;
-  //   }, []);
-
-  //   const play = () => {
-  //     const audio = audioRef.current;
-  //     if (!audio) return;
-  //     audio.currentTime = 0;
-  //     audio.play();
-  //   };
-
-  //   return play;
-  // }
-
   const { play } = usePlayClick();
 
   function handleClick() {
     play();
 
-    toggleDarkMode();
+    requestAnimationFrame(() => {
+      toggleDarkMode();
+    });
   }
 
   return (
