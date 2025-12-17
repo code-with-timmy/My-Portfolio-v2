@@ -59,11 +59,7 @@ function SectionLayout() {
                 <RiVerifiedBadgeFill className="text-[#1DB954]" />
               </h1>
               <TextType
-                text={[
-                  "Optimized for performance",
-                  "Engineered for scalability.",
-                  "Built with clean architecture.",
-                ]}
+                text={["Frontend engineer", "Web and Mobile Developer"]}
                 typingSpeed={75}
                 pauseDuration={1500}
                 showCursor={true}

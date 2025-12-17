@@ -244,15 +244,14 @@
 
   .project-card {
     width: 100%;
-    height: 400px;
+
     background: var(--bg);
     border: 1px solid var(--border-btn);
     opacity: 0.9;
     border-radius: 4px;
     box-shadow: 0 8px 32px rgba(128, 128, 128, 0.15);
     position: relative;
-    display: flex;
-    flex-direction: column;
+
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
@@ -310,6 +309,10 @@
     transform: translateX(7px);
   }
 
+  .scaaa {
+    transform: scale(0);
+  }
+
   .blink {
     width: 10px;
     height: 10px;
@@ -319,6 +322,10 @@
     animation: blinkLight 1.2s infinite ease-in-out;
   }
 
+  .blink2 {
+    color: var(--text);
+    animation: blinkLight2 1.2s infinite ease-in-out;
+  }
   @keyframes blinkLight {
     0%,
     100% {
@@ -326,6 +333,52 @@
     }
     50% {
       opacity: 1;
+    }
+  }
+  @keyframes blinkLight2 {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .glow::before {
+    content: "";
+    opacity: 0;
+    border-radius: 999rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 20%,
+      var(--border) 50%,
+      transparent 80%
+    );
+    transform: skewX(-20deg);
+    animation: glows 6s ease-in-out infinite;
+  }
+
+  @keyframes glows {
+    0% {
+      left: -100%;
+    }
+    1% {
+      left: -100%;
+      opacity: 1;
+    }
+    15% {
+      left: 100%;
+      opacity: 1;
+    }
+    16% {
+      opacity: 0;
+    }
+    100% {
+      left: -100%;
     }
   }
 }
