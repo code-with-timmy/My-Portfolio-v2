@@ -1,4 +1,3 @@
-import { BiSolidFilePdf } from "react-icons/bi";
 import { MdEmail } from "react-icons/md";
 import Button from "./Button";
 

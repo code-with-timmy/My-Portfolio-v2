@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { HiCode } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
+import { BiSolidFilePdf } from "react-icons/bi";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -48,17 +49,17 @@ function Footer() {
             </span>
           </a>
           <a
-            href="https://leetcode.com/u/Timmy_py/"
+            href="https://docs.google.com/document/d/1n-zyA7X5YKxzTaQEQL0nAu8R_tDHukcGHH4ULE3qspE/edit?tab=t.0"
             className="flex items-center gap-1 ft-1 group "
           >
-            <HiCode className="text-[18px] opacity-[0.6] group-hover:opacity-100" />
+            <BiSolidFilePdf className="text-[18px] opacity-[0.6] group-hover:opacity-100" />
             <span className="text-[14px] opacity-[0.7]  group-hover:opacity-100 max-sm:hidden">
-              Leetcode
+              Resume
             </span>
           </a>
         </div>
         <div className="text-center pt-5 text-[13px] opacity-[0.4]">
-          <p> © {currentYear} Ojo Timmy. All rights reserved.</p>
+          <p> © {currentYear} oxTimmy. All rights reserved.</p>
         </div>
       </div>
     </footer>
